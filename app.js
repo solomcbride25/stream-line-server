@@ -1,11 +1,12 @@
 const express = require('express')
-const app = express()
-const PORT=8080
 const morgan = require('morgan')
 const helmet = require('helmet')
 const cors = require('cors')
-const { get } = require('http')
 const path = require('path')
+const userRoutes = require("/routes/userRoutes")
+
+const app = express()
+const PORT=8080
 
 app.use(morgan("dev"));
 app.use(helmet());
@@ -23,3 +24,7 @@ app.get('/api/content', (req, res, next) => {
 app.get('/user/:email', (req, res, next) => {
     res.status().json(`This route will send profile data for user: ${req.params.username}`);
 });
+
+app.listen(PORT,() => {
+    console.log("The server is listening")
+})
