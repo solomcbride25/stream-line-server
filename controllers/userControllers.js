@@ -37,4 +37,4 @@ const logout = async (req, res, next) => {
     sessionDestruction();
 };
 
-module.exports(logout, login, registeredUser); 
+module.exports = {logout, login, registerUser}; 
