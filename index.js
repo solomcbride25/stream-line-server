@@ -3,7 +3,7 @@ const morgan = require('morgan')
 const helmet = require('helmet')
 const cors = require('cors')
 const path = require('path')
-const userRoutes = require("/routes/userRoutes")
+const userRoutes = require('./routes/userRoutes')
 
 const app = express()
 const PORT=8080
