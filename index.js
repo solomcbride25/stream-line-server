@@ -1,9 +1,12 @@
+require('dotenv').config();
 const express = require('express')
 const morgan = require('morgan')
 const helmet = require('helmet')
 const cors = require('cors')
 const path = require('path')
 const userRoutes = require('./routes/userRoutes')
+const connectDB = require('./db')
+connectDB = require('./db')
 
 const app = express()
 const PORT=8080
@@ -11,6 +14,8 @@ const PORT=8080
 app.use(morgan("dev"));
 app.use(helmet());
 app.use(cors());
+
+connectDB();
 
 
 app.get('/', (req,res,next) => {
@@ -26,5 +31,5 @@ app.get('/user/:email', (req, res, next) => {
 });
 
 app.listen(PORT,() => {
-    console.log("The server is listening")
+    console.log(`Server running on port ${PORT}`)
 })
