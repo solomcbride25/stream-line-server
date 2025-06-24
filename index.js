@@ -6,7 +6,6 @@ const cors = require('cors')
 const path = require('path')
 const userRoutes = require('./routes/userRoutes')
 const connectDB = require('./db')
-connectDB = require('./db')
 
 const app = express()
 const PORT=8080
