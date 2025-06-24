@@ -12,8 +12,7 @@ const PORT=8080
 
 app.use(morgan("dev"));
 app.use(helmet());
-app.use(cors());
-
+app.use(cors({origin: 'https://your-frontend.netlify.app', credentials: 'true'}));
 connectDB();
 
 
