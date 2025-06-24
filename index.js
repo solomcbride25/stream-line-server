@@ -18,15 +18,15 @@ connectDB();
 
 
 app.get('/', (req,res,next) => {
-    res.status().json('This route points to the Home page');
+    res.status(500).json('This route points to the Home page');
 })
 
 app.get('/api/content', (req, res, next) => {
-    res.status().json('This route will send all content data')
+    res.status(500).json('This route will send all content data')
 })
 
 app.get('/user/:email', (req, res, next) => {
-    res.status().json(`This route will send profile data for user: ${req.params.username}`);
+    res.status(500).json(`This route will send profile data for user: ${req.params.username}`);
 });
 
 app.listen(PORT,() => {
